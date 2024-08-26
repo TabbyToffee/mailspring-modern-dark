@@ -1,0 +1,370 @@
+@import "ui-variables";
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+button,
+.list-item *,
+.outline-view .item-container * {
+  cursor: pointer !important;
+}
+
+.thread-injected-quick-actions {
+  /*border-radius: 7px;*/
+  overflow: hidden;
+  gap: 3px;
+  height: unset !important;
+  margin: 4px;
+}
+
+.thread-list .list-item .list-column-HoverActions .action {
+  margin: 0 !important;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+// Give mail hover actions white background
+
+.thread-list .list-item .list-column-HoverActions .action.action-snooze {
+	background: url('../static/images/thread-list-quick-actions/ic-quickaction-snooze@2x.png') center no-repeat, @mail-hover-actions-color;
+}
+
+.thread-list .list-item .list-column-HoverActions .action.action-trash {
+  background: url('../static/images/thread-list-quick-actions/ic-quick-button-trash@2x.png') center no-repeat, @mail-hover-actions-color;
+}
+
+.thread-list .list-item .list-column-HoverActions .action.action-archive {
+  background: url('../static/images/thread-list-quick-actions/ic-quick-button-archive@2x.png') center no-repeat, @mail-hover-actions-color;
+}
+
+.disclosure-triangle {
+  width: unset;
+}
+
+body.platform-linux .toolbar-menu-control .btn-toolbar, body.platform-win32.window-type-default .toolbar-menu-control .btn-toolbar {
+  display: flex;
+  align-items: center;
+}
+
+body.platform-win32 .btn {
+  box-shadow: none;
+}
+
+.thread-list .list-item.focused:hover .list-column-HoverActions .inner {
+  background-image: linear-gradient(to right, rgba(157, 155, 219, 0) 0%, #9d9bdb 30%, #9d9bdb 100%);
+}
+
+.thread-list .list-item:hover .list-column-HoverActions .inner {
+  position: relative;
+  //width: 200px;
+  height: 100%;
+  right: 200px;
+}
+
+.thread-list .list-item.focused:hover .list-column-HoverActions .inner .action {
+  box-shadow: 0 0 0 2px inset rgb(31, 31, 31);
+  //filter: none;
+}
+
+.scrollbar-track .scrollbar-handle {
+  border-radius: 100vw !important;
+}
+
+// Toolbar styles ---------------------------------------------------
+
+// Activity btn color
+.toolbar-activity .activity-toolbar-icon {
+  background: #fff;
+}
+
+.sheet-toolbar .button-group {
+  margin-left: 0;
+}
+
+.btn.btn-toolbar {
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.button-group > .key-commands-region {
+  display: flex;
+}
+
+body.platform-win32 .sheet-toolbar-container .btn-toolbar:hover,
+.toolbar-activity:hover {
+  background: #3b3b3b !important;
+}
+
+.btn.btn-toolbar,
+.toolbar-activity {
+  margin: 3px !important;
+  padding: 0 14px;
+  border-radius: 5px !important;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  height: unset !important;
+}
+
+.toolbar-activity {
+  transition: background 300ms;
+}
+
+.toolbar-activity .activity-toolbar-icon {
+  margin: 0;
+}
+
+.outline-view .item .item-count-box.alt-count {
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.suggestions {
+  margin-top: 4px;
+}
+
+.thread-search-bar {
+  width: 100%;
+  height: 100%;
+  margin-top: unset;
+  padding-left: unset;
+  padding-right: unset;
+
+  padding: 0 8px;
+  gap: 8px;
+}
+
+.thread-search-bar.focused {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.thread-search-bar .tokenizing-contenteditable .layer {
+  padding-left: unset;
+  padding-right: unset;
+  padding-top: 1px;
+}
+
+.item-container:has(.thread-search-bar) {
+  flex-direction: row;
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 3px;
+}
+
+.sheet-toolbar-container.mode-split > * {
+  height: 100%;
+}
+
+.outline-view .heading {
+  padding: 4px;
+  margin: 5px 10px;
+  background: #333;
+  border-radius: 3px;
+  align-items: center !important;
+}
+
+.outline-view .heading .text {
+  padding-left: 8px !important;
+}
+
+.account-switcher {
+  top: 0;
+}
+
+// Message rounding
+
+#message-list .message-item-wrap .message-item-white-wrap {
+  border-radius: 5px !important;
+  margin-bottom: 10px;
+  //background: #fff;
+}
+
+#message-list .footer-reply-area-wrap {
+  border-radius: 5px !important;
+  border-top: none;
+}
+
+/*#message-list .message-item-area {
+  //filter: invert(1) hue-rotate(180deg);
+  color: #000 !important;
+}*/
+
+/*body *:not(iframe,
+.message-item-white-wrap) {
+  color: #eee
+}*/
+
+.add-item-button > img {
+  height: unset;
+}
+
+// Composing recipients
+
+.tokenizing-field .token.selected, .tokenizing-field .token.dragging {
+  box-shadow: none;
+  border: 0;
+  border-top: 0;
+  border-radius: 0;
+}
+
+.tokenizing-field .token:hover {
+  background: #8887bd !important;
+}
+
+body.platform-win32 .token {
+  border-radius: 5px !important;
+  background: #424242;
+  transition: 0.2s background;
+}
+
+body.platform-win32 .token.selected, body.platform-win32 .token.dragging {
+  border-radius: initial;
+  background: #8887bd;
+}
+
+.only-item {
+  background: #424242 !important;
+  border-radius: 5px !important;
+}
+
+.secondary-items {
+  background: #424242 !important;
+  border-radius: 5px !important;
+}
+
+.signature-button-dropdown > .button-dropdown > .only-item {
+  padding: 0 0.8em !important;
+}
+
+.signature-button-dropdown > .button-dropdown > .only-item > img {
+  zoom: 0.39 !important;
+  translate: 0 -0.5em;
+  filter: brightness(2);
+}
+
+// Signature
+
+.RichEditor-root .uneditable .uneditable-remove {
+  right: -12px;
+  top: -12px;
+}
+
+.uneditable.custom-block.focused {
+  
+}
+
+// Preferences rounding
+
+select,
+input[type='text'], input[type='email'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='time'], input[type='url'] {
+  border-radius: 5px !important;
+  &:focus {
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 3px rgb(115, 115, 141) !important;
+  }
+}
+
+// ------
+
+.sheet-toolbar {
+  border-bottom: 1px solid @border-color-divider;
+  box-shadow: none;
+}
+
+#message-list .message-item-wrap .message-item-white-wrap {
+  box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.28),
+    0 1px 1.5px rgba(255, 255, 255, 0.08);
+}
+
+// Sync error styles ------------------------------------
+
+.notification .action {
+border-radius: 0;
+}
+
+// Theme picker close btn -------------------------------
+
+.modal-close {
+  content: url(mailspring://Dark-Light/assets/close-icon.svg);
+  object-fit: contain;
+}
+
+// Round message corners --------------------------------
+
+#message-list .message-item-area iframe {
+  border-radius: 5px;
+}
+
+// dropdown button styles -------------------------------
+
+.button-dropdown {
+  border-radius: 5px;
+  // display: grid;
+  // grid-auto-flow: column;
+  // align-items: center;
+
+  & .primary-item,
+  & .secondary-picker {
+    padding-inline: 0.8em;
+    background: none;
+    height: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+
+    display: inline-flex;
+
+    box-shadow: none !important;
+    background: none !important;
+    &:hover {
+      background: #0002 !important;
+    }
+  }
+}
+
+// Send dropdown --------------------------------------
+
+.btn-send {
+  background: #5B90fB;
+}
+
+// update from field styles ---------------------------
+.composer-participant-field.from-field {
+  display: flex;
+  align-items: center;
+  & > * {
+    padding: 0
+  }
+}
+
+.signature-button-dropdown > .button-dropdown {
+  padding: 0;
+  display: block;
+}
+
+// rich text buttons ---------------------------------
+
+.RichEditor-toolbar button.active {
+  color: #fff;
+  background: #424242;
+  border-radius: 5px;
+}
+
+.RichEditor-toolbar .inner {
+  display: flex;
+  gap: 0.2em;
+
+  & button {
+    padding: 0;
+    aspect-ratio: 1;
+  }
+}
