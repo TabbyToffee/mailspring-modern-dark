@@ -7,10 +7,10 @@ An elegant and modern dark theme for the [Mailspring](http://www.getmailspring.c
 ## Improvements:
 
 1. Rounded edges soften the UI,
-2. Fixing alignment isues and bad css practices,
-3. sofening the UI.
+2. Fixing alignment issues and bad CSS practices,
+3. softening the UI.
 
-## Instalation
+## Installation
 
 1. [Download the latest release here](https://github.com/TabbyToffee/mailspring-modern-dark/releases)
 
@@ -23,3 +23,6 @@ An elegant and modern dark theme for the [Mailspring](http://www.getmailspring.c
 5. Select the `mailspring-modern-dark` folder.
 
 6. Enjoy!
+
+## P.S.
+this theme is even better with [mailspring-avatars](https://github.com/Striffly/mailspring-avatars/tree/main), a mailspring plugin that adds sender avatar pictures to you emails.
