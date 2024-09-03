@@ -1,370 +1,478 @@
 @import "ui-variables";
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
 }
 
+// Give pointer cursors
 button,
 .list-item *,
 .outline-view .item-container * {
-  cursor: pointer !important;
+	cursor: pointer !important;
 }
 
 .thread-injected-quick-actions {
-  /*border-radius: 7px;*/
-  overflow: hidden;
-  gap: 3px;
-  height: unset !important;
-  margin: 4px;
+	overflow: hidden;
+	gap: 3px;
+	height: unset !important;
+	margin: 4px;
 }
 
 .thread-list .list-item .list-column-HoverActions .action {
-  margin: 0 !important;
-  border-radius: 7px;
-  margin: 2px;
+	margin: 0 !important;
+	border-radius: @corner-radius;
+	margin: 2px;
 }
 
 // Give mail hover actions white background
 
 .thread-list .list-item .list-column-HoverActions .action.action-snooze {
-	background: url('../static/images/thread-list-quick-actions/ic-quickaction-snooze@2x.png') center no-repeat, @mail-hover-actions-color;
+	background: url("../static/images/thread-list-quick-actions/ic-quickaction-snooze@2x.png")
+			center no-repeat,
+		@mail-hover-actions-color;
 }
 
 .thread-list .list-item .list-column-HoverActions .action.action-trash {
-  background: url('../static/images/thread-list-quick-actions/ic-quick-button-trash@2x.png') center no-repeat, @mail-hover-actions-color;
+	background: url("../static/images/thread-list-quick-actions/ic-quick-button-trash@2x.png")
+			center no-repeat,
+		@mail-hover-actions-color;
 }
 
 .thread-list .list-item .list-column-HoverActions .action.action-archive {
-  background: url('../static/images/thread-list-quick-actions/ic-quick-button-archive@2x.png') center no-repeat, @mail-hover-actions-color;
+	background: url("../static/images/thread-list-quick-actions/ic-quick-button-archive@2x.png")
+			center no-repeat,
+		@mail-hover-actions-color;
 }
 
 .disclosure-triangle {
-  width: unset;
+	width: unset;
 }
 
-body.platform-linux .toolbar-menu-control .btn-toolbar, body.platform-win32.window-type-default .toolbar-menu-control .btn-toolbar {
-  display: flex;
-  align-items: center;
+.btn-toolbar {
+	display: flex;
+	align-items: center;
+
+  background: none;
+  box-shadow: none !important;
 }
 
-body.platform-win32 .btn {
-  box-shadow: none;
+.btn {
+	box-shadow: none;
 }
 
 .thread-list .list-item.focused:hover .list-column-HoverActions .inner {
-  background-image: linear-gradient(to right, rgba(157, 155, 219, 0) 0%, #9d9bdb 30%, #9d9bdb 100%);
+	background-image: linear-gradient(
+		to right,
+		rgba(157, 155, 219, 0) 0%,
+		#9d9bdb 30%,
+		#9d9bdb 100%
+	);
 }
 
 .thread-list .list-item:hover .list-column-HoverActions .inner {
-  position: relative;
-  //width: 200px;
-  height: 100%;
-  right: 200px;
+	position: relative;
+	height: 100%;
+	right: 200px;
 }
 
 .thread-list .list-item.focused:hover .list-column-HoverActions .inner .action {
-  box-shadow: 0 0 0 2px inset rgb(31, 31, 31);
-  //filter: none;
+	box-shadow: 0 0 0 2px inset rgb(31, 31, 31);
 }
 
 .scrollbar-track .scrollbar-handle {
-  border-radius: 100vw !important;
+	border-radius: 100vw !important;
 }
 
 // Toolbar styles ---------------------------------------------------
 
 // Activity btn color
 .toolbar-activity .activity-toolbar-icon {
-  background: #fff;
+	background: #fff;
+}
+
+.sheet-toolbar-container {
+  background: none !important; // Remove gradient from toolbar
 }
 
 .sheet-toolbar .button-group {
-  margin-left: 0;
+	margin-left: 0;
 }
 
 .btn.btn-toolbar {
-  margin: 3px;
-  border-radius: 5px;
+	margin: 3px;
+	border-radius: @corner-radius;
 }
 
 .button-group > .key-commands-region {
-  display: flex;
+	display: flex;
 }
 
-body.platform-win32 .sheet-toolbar-container .btn-toolbar:hover,
+// top menu buttons
+.sheet-toolbar-container .btn-toolbar:hover,
 .toolbar-activity:hover {
-  background: #3b3b3b !important;
+	background: @background-hover !important;
 }
 
 .btn.btn-toolbar,
 .toolbar-activity {
-  margin: 3px !important;
-  padding: 0 14px;
-  border-radius: 5px !important;
-  box-sizing: content-box;
-  display: flex;
-  align-items: center;
-  height: unset !important;
+	margin: 3px !important;
+	padding: 0 14px;
+	border-radius: 5px !important;
+	box-sizing: content-box;
+	display: flex;
+	align-items: center;
+	height: unset !important;
 }
 
 .toolbar-activity {
-  transition: background 300ms;
+	transition: background 300ms;
 }
 
 .toolbar-activity .activity-toolbar-icon {
-  margin: 0;
-}
-
-.outline-view .item .item-count-box.alt-count {
-  border-radius: 5px;
-  padding: 0 5px;
+	margin: 0;
 }
 
 .suggestions {
-  margin-top: 4px;
+	margin-top: 4px;
 }
 
 .thread-search-bar {
-  width: 100%;
-  height: 100%;
-  margin-top: unset;
-  padding-left: unset;
-  padding-right: unset;
+	width: 100%;
+	height: 100%;
+	margin-top: unset;
+	padding-left: unset;
+	padding-right: unset;
 
-  padding: 0 8px;
-  gap: 8px;
+	padding: 0 8px;
+	gap: 8px;
+
+  box-shadow: none;
+  background: @background-hover;
 }
 
 .thread-search-bar.focused {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .thread-search-bar .tokenizing-contenteditable .layer {
-  padding-left: unset;
-  padding-right: unset;
-  padding-top: 1px;
+	padding-left: unset;
+	padding-right: unset;
+	padding-top: 1px;
 }
 
 .item-container:has(.thread-search-bar) {
-  flex-direction: row;
-  position: relative;
-  display: flex;
-  height: 100%;
-  align-items: center;
-  padding: 3px;
+	flex-direction: row;
+	position: relative;
+	display: flex;
+	height: 100%;
+	align-items: center;
+	padding: 3px;
 }
 
 .sheet-toolbar-container.mode-split > * {
-  height: 100%;
+	height: 100%;
 }
 
-.outline-view .heading {
-  padding: 4px;
-  margin: 5px 10px;
-  background: #333;
-  border-radius: 3px;
-  align-items: center !important;
-}
-
-.outline-view .heading .text {
-  padding-left: 8px !important;
-}
-
-.account-switcher {
-  top: 0;
-}
+// Civilised CSS starts here --------------------------------------------------
 
 // Message rounding
 
 #message-list .message-item-wrap .message-item-white-wrap {
-  border-radius: 5px !important;
-  margin-bottom: 10px;
-  //background: #fff;
+	border-radius: @corner-radius !important;
+	margin-bottom: 10px;
+	//background: #fff;
 }
 
 #message-list .footer-reply-area-wrap {
-  border-radius: 5px !important;
-  border-top: none;
+	border-radius: @corner-radius !important;
+	border-top: none;
 }
 
-/*#message-list .message-item-area {
-  //filter: invert(1) hue-rotate(180deg);
-  color: #000 !important;
-}*/
-
-/*body *:not(iframe,
-.message-item-white-wrap) {
-  color: #eee
-}*/
-
 .add-item-button > img {
-  height: unset;
+	height: unset;
 }
 
 // Composing recipients
 
-.tokenizing-field .token.selected, .tokenizing-field .token.dragging {
-  box-shadow: none;
-  border: 0;
-  border-top: 0;
-  border-radius: 0;
+.tokenizing-field .token.selected,
+.tokenizing-field .token.dragging {
+	box-shadow: none;
+	border: 0;
+	border-top: 0;
+	border-radius: 0;
 }
 
 .tokenizing-field .token:hover {
-  background: #8887bd !important;
+	background: #8887bd !important;
 }
 
-body.platform-win32 .token {
-  border-radius: 5px !important;
-  background: #424242;
-  transition: 0.2s background;
+.token {
+	border-radius: @corner-radius !important;
+	background: @background-selected;
+	transition: 0.2s background;
 }
 
-body.platform-win32 .token.selected, body.platform-win32 .token.dragging {
-  border-radius: initial;
-  background: #8887bd;
+.token.selected,
+.token.dragging {
+	border-radius: initial;
+	background: #8887bd;
 }
 
 .only-item {
-  background: #424242 !important;
-  border-radius: 5px !important;
+	background: @background-selected !important;
+	border-radius: @corner-radius !important;
 }
 
 .secondary-items {
-  background: #424242 !important;
-  border-radius: 5px !important;
+	background: @background-selected !important;
+	border-radius: @corner-radius !important;
 }
 
 .signature-button-dropdown > .button-dropdown > .only-item {
-  padding: 0 0.8em !important;
+	padding: 0 0.8em !important;
 }
 
 .signature-button-dropdown > .button-dropdown > .only-item > img {
-  zoom: 0.39 !important;
-  translate: 0 -0.5em;
-  filter: brightness(2);
+	zoom: 0.39 !important;
+	translate: 0 -0.5em;
+	filter: brightness(2);
 }
 
 // Signature
 
 .RichEditor-root .uneditable .uneditable-remove {
-  right: -12px;
-  top: -12px;
+	right: -12px;
+	top: -12px;
 }
 
 .uneditable.custom-block.focused {
-  
 }
 
 // Preferences rounding
 
 select,
-input[type='text'], input[type='email'], input[type='date'], input[type='datetime'], input[type='datetime-local'], input[type='month'], input[type='number'], input[type='password'], input[type='search'], input[type='tel'], input[type='time'], input[type='url'] {
-  border-radius: 5px !important;
-  &:focus {
-    border: 0 !important;
-    outline: none !important;
-    box-shadow: none !important;
-    border-bottom: 3px rgb(115, 115, 141) !important;
-  }
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"] {
+	border-radius: @corner-radius !important;
+
+	&:focus {
+		border: 0 !important;
+		outline: none !important;
+		box-shadow: none !important;
+		border-bottom: 3px rgb(115, 115, 141) !important;
+	}
 }
 
 // ------
 
 .sheet-toolbar {
-  border-bottom: 1px solid @border-color-divider;
-  box-shadow: none;
+	border-bottom: 1px solid @border-color-divider;
+	box-shadow: none;
 }
 
 #message-list .message-item-wrap .message-item-white-wrap {
-  box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.28),
-    0 1px 1.5px rgba(255, 255, 255, 0.08);
+	box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.28),
+		0 1px 1.5px rgba(255, 255, 255, 0.08);
 }
 
 // Sync error styles ------------------------------------
 
 .notification .action {
-border-radius: 0;
+	border-radius: 0;
 }
 
 // Theme picker close btn -------------------------------
 
 .modal-close {
-  content: url(mailspring://Dark-Light/assets/close-icon.svg);
-  object-fit: contain;
+	content: url(mailspring://mailspring-modern-dark/assets/close-icon.svg);
+	object-fit: contain;
 }
 
 // Round message corners --------------------------------
 
 #message-list .message-item-area iframe {
-  border-radius: 5px;
+	border-radius: @corner-radius;
 }
 
 // dropdown button styles -------------------------------
 
 .button-dropdown {
-  border-radius: 5px;
-  // display: grid;
-  // grid-auto-flow: column;
-  // align-items: center;
+	border-radius: @corner-radius;
+  align-items: stretch;
 
-  & .primary-item,
-  & .secondary-picker {
-    padding-inline: 0.8em;
-    background: none;
-    height: 100%;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
+	& .primary-item,
+	& .secondary-picker {
+		padding-inline: 0.8em;
+		background: none;
+		height: 100%;
+		left: 0;
+		right: 0;
 
-    display: inline-flex;
+    border: none !important;
 
-    box-shadow: none !important;
-    background: none !important;
-    &:hover {
-      background: #0002 !important;
-    }
-  }
+		display: inline-flex;
+		align-items: center;
+
+		box-shadow: none !important;
+		background: none !important;
+
+		&:hover {
+			background: #0002 !important;
+		}
+	}
 }
 
 // Send dropdown --------------------------------------
 
 .btn-send {
-  background: #5B90fB;
+	background: #5b90fb;
 }
 
 // update from field styles ---------------------------
 .composer-participant-field.from-field {
-  display: flex;
-  align-items: center;
-  & > * {
-    padding: 0
-  }
+	display: flex;
+	align-items: center;
+	gap: 0.8em;
+
+	& > * {
+		padding: 0;
+		left: 0 !important;
+		top: 0 !important;
+	}
 }
 
 .signature-button-dropdown > .button-dropdown {
-  padding: 0;
-  display: block;
+	padding: 0;
+	margin: 0;
+	display: block;
 }
 
 // rich text buttons ---------------------------------
 
 .RichEditor-toolbar button.active {
-  color: #fff;
-  background: #424242;
-  border-radius: 5px;
+	color: #fff;
+	background: @background-selected;
+	border-radius: @corner-radius;
 }
 
 .RichEditor-toolbar .inner {
-  display: flex;
-  gap: 0.2em;
+	display: flex;
+	gap: 0.2em;
 
-  & button {
-    padding: 0;
-    aspect-ratio: 1;
-  }
+	& button {
+		padding: 0;
+		aspect-ratio: 1;
+	}
+}
+
+// Folder styles ------------------------------------------------------------
+
+// Folder sections
+
+.outline-view .heading {
+	padding: 4px;
+	margin: 0.3rem 0.6rem;
+	background: @background-hover;
+	border-radius: @corner-radius;
+	align-items: center !important;
+
+	& .text {
+		padding-left: 8px !important;
+	}
+}
+
+.account-switcher {
+	& img {
+		content: url(mailspring://mailspring-modern-dark/assets/circle-arrow.svg);
+		object-fit: contain;
+		filter: none !important;
+	}
+	top: 0;
+}
+
+// Folders
+
+.outline-view .item-container {
+	border-radius: @corner-radius;
+	margin-inline: 0.6rem;
+	margin-block: 0.3rem;
+	padding-right: 1em;
+
+	&:has(.item.selected) img.content-mask,
+	&:hover img.content-mask {
+		background: @text-color;
+	}
+
+	&:has(.item.selected) {
+		background: @accent-primary-dark;
+
+		& .item-count-box.alt-count {
+			background: @text-color !important;
+		}
+	}
+
+	&:hover {
+		background: @background-hover;
+	}
+
+	& > .item {
+		background: transparent;
+		color: @text-color;
+
+		gap: 0.6em;
+
+		& .item-count-box.alt-count {
+			border-radius: @corner-radius;
+			padding: 0 5px;
+			background: @accent-primary !important;
+		}
+
+		& .icon {
+			height: 100%;
+			padding: 0;
+			display: inline-flex;
+			align-items: center;
+		}
+	}
+}
+
+// Mail list --------------------------------------------------
+
+.list-container .list-rows {
+	padding: 1em;
+	background: rgb(41, 41, 41);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	height: 100% !important;
+}
+
+.list-container .scroll-region-content-inner:has(.list-rows) {
+	height: 100%;
+}
+
+.list-container .list-rows > div {
+	position: static !important;
+}
+
+.list-container .list-item {
+	border-radius: 4px;
+	border-bottom: none !important;
+
+	&:hover:not(.focused) {
+		background: @background-hover;
+	}
 }
